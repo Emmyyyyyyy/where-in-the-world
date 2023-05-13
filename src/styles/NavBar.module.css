@@ -1,0 +1,32 @@
+.wrapper {
+  background: hsl(0, 0%, 100%);
+  max-width: 1920px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.appTitle {
+  font-weight: 800;
+}
+
+.modeWrapper {
+  cursor: pointer;
+}
+
+.modeText {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.dark {
+  background: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}

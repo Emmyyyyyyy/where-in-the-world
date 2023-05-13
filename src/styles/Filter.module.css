@@ -1,0 +1,107 @@
+.wrapper {
+  background: hsl(0, 0%, 98%);
+  max-width: 1920px;
+  min-height: 100vh;
+}
+
+.container {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.filterAreaWrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+
+.searchBar {
+  width: 500px;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  text-align: left;
+  width: 200px;
+  padding: 15px 30px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropDown {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  padding: 20px 30px;
+  width: 200px;
+  background: hsl(0, 0%, 100%);
+}
+
+.countryCardWrapper {
+  /* background: blue; */
+  width: 100%;
+  display: grid;
+  grid-auto-rows: 300px;
+  grid-template-columns: repeat(4, 270px);
+  gap: 60px;
+  overflow: hidden;
+}
+
+.country {
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.countryCard {
+  /* background: yellow; */
+  background: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.region {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.region:last-child {
+  margin-bottom: 0;
+}
+
+.coverImage {
+  /* background: red; */
+  width: 100%;
+  height: 140px;
+}
+.textArea {
+  padding: 20px 20px;
+}
+.infoWrapper {
+  width: 100%;
+}
+.info {
+  margin-bottom: 2px;
+}
+.type {
+  /* display: inline; */
+  display: inline-block;
+}
+
+.value {
+  display: inline-block;
+  font-weight: 300;
+}
+.dark {
+  background: hsl(207, 26%, 17%);
+}
+
+.darkProps {
+  background: hsl(209, 23%, 22%);
+  color: hsl(0, 0%, 100%);
+}
