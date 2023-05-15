@@ -66,30 +66,32 @@ export default function Detail({ darkMode }: Props) {
             <p className={styles.type} style={{ lineHeight: 'normal' }}>
               Border Countries:{' '}
             </p>
-            <p
-              className={
-                darkMode
-                  ? `${styles.borderCountryValue} ${styles.darkProps}`
-                  : styles.borderCountryValue
-              }>
-              Dutch
-            </p>
-            <p
-              className={
-                darkMode
-                  ? `${styles.borderCountryValue} ${styles.darkProps}`
-                  : styles.borderCountryValue
-              }>
-              French
-            </p>
-            <p
-              className={
-                darkMode
-                  ? `${styles.borderCountryValue} ${styles.darkProps}`
-                  : styles.borderCountryValue
-              }>
-              German
-            </p>{' '}
+            <div className={styles.borderCountryList}>
+              <p
+                className={
+                  darkMode
+                    ? `${styles.borderCountryValue} ${styles.darkProps}`
+                    : styles.borderCountryValue
+                }>
+                Dutch
+              </p>
+              <p
+                className={
+                  darkMode
+                    ? `${styles.borderCountryValue} ${styles.darkProps}`
+                    : styles.borderCountryValue
+                }>
+                French
+              </p>
+              <p
+                className={
+                  darkMode
+                    ? `${styles.borderCountryValue} ${styles.darkProps}`
+                    : styles.borderCountryValue
+                }>
+                German
+              </p>
+            </div>
           </div>
         </div>
       </div>

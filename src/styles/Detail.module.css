@@ -1,7 +1,7 @@
 .container {
   width: 1300px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 50px 25px;
   font-size: 16px;
 }
 .buttonArea {
@@ -55,6 +55,7 @@
   margin-right: 5px;
   display: inline-block;
   line-height: 2;
+  white-space: nowrap;
 }
 
 .value {
@@ -63,7 +64,6 @@
 }
 .borderCountry {
   display: flex;
-  gap: 5px;
 }
 .borderCountryValue {
   background: hsl(0, 0%, 100%);
@@ -75,6 +75,11 @@
   border-radius: 5px;
   /* margin-bottom: 5px; */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+.borderCountryList {
+  display: flex;
+  gap: 5px;
 }
 .darkProps {
   background: hsl(209, 23%, 22%);
@@ -84,5 +89,38 @@
 @media only screen and (max-width: 1300px) {
   .container {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .infoWrapper {
+    flex-direction: column;
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+  }
+  .flagWrapper {
+    height: 300px;
+  }
+  .info {
+    width: 100%;
+    margin: 40px 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .devideInfo {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .infoWrapper {
+    width: 100%;
+  }
+  .flagWrapper {
+    width: 100%;
+  }
+  .borderCountry {
+    flex-direction: column;
+    gap: 20px;
   }
 }
