@@ -7,7 +7,9 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <NavBar darkMode={darkMode} handleModeClick={handleModeClick} />
-      <Component {...pageProps} darkMode={darkMode} />
+      <div className={darkMode ? `wrapper dark` : 'wrapper'}>
+        <Component {...pageProps} darkMode={darkMode} />
+      </div>
     </>
   );
 }

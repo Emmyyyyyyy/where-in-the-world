@@ -2,6 +2,7 @@
   background: hsl(0, 0%, 100%);
   max-width: 1920px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  color: hsl(200, 15%, 8%);
 }
 
 .container {
@@ -29,4 +30,10 @@
 .dark {
   background: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    width: 100%;
+  }
 }

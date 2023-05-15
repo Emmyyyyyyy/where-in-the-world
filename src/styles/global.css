@@ -3,3 +3,14 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+.wrapper {
+  background: hsl(0, 0%, 98%);
+  max-width: 1920px;
+  min-height: 100vh;
+}
+
+.dark {
+  background: hsl(207, 26%, 17%);
+  color: hsl(0, 0%, 100%);
+}

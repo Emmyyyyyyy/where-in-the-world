@@ -1,6 +1,7 @@
 import styles from '../../styles/Filter.module.css';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
   darkMode: boolean;
@@ -57,27 +58,32 @@ export default function Filter({ darkMode }: Props) {
           </div>
         </div>
         <div className={styles.countryCardWrapper}>
-          <div
-            className={darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard}>
-            <Image src="" alt="" className={styles.coverImage} />
-            <div className={styles.textArea}>
-              <p className={styles.country}>Germany</p>
-              <div className={styles.infoWrapper}>
-                <div className={styles.info}>
-                  <p className={styles.type}>Population:</p>
-                  <p className={styles.value}>81,770,900</p>
-                </div>
-                <div className={styles.info}>
-                  <p className={styles.type}>Rigion:</p>
-                  <p className={styles.value}>Europe</p>
-                </div>
-                <div className={styles.info}>
-                  <p className={styles.type}>Capital:</p>
-                  <p className={styles.value}>Berlin</p>
+          <Link href="/detail">
+            <div
+              className={
+                darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard
+              }>
+              <Image src="" alt="" className={styles.coverImage} />
+              <div className={styles.textArea}>
+                <p className={styles.country}>Germany</p>
+                <div className={styles.infoWrapper}>
+                  <div className={styles.info}>
+                    <p className={styles.type}>Population:</p>
+                    <p className={styles.value}>81,770,900</p>
+                  </div>
+                  <div className={styles.info}>
+                    <p className={styles.type}>Rigion:</p>
+                    <p className={styles.value}>Europe</p>
+                  </div>
+                  <div className={styles.info}>
+                    <p className={styles.type}>Capital:</p>
+                    <p className={styles.value}>Berlin</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
+
           {/* <div
             className={darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard}>
             <Image src="" alt="" className={styles.coverImage} />

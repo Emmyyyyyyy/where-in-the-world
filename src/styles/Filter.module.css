@@ -2,6 +2,7 @@
   background: hsl(0, 0%, 98%);
   max-width: 1920px;
   min-height: 100vh;
+  color: hsl(200, 15%, 8%);
 }
 
 .container {
@@ -20,7 +21,8 @@
 
 .searchBar {
   width: 500px;
-  padding: 20px 30px;
+  height: 51px;
+  padding: 0px 30px;
   border-radius: 5px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
@@ -41,6 +43,7 @@
   padding: 20px 30px;
   width: 200px;
   background: hsl(0, 0%, 100%);
+  border-radius: 5px;
 }
 
 .countryCardWrapper {
@@ -91,6 +94,7 @@
 .type {
   /* display: inline; */
   display: inline-block;
+  margin-right: 5px;
 }
 
 .value {
@@ -104,4 +108,42 @@
 .darkProps {
   background: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    width: 100%;
+  }
+  .countryCardWrapper {
+    grid-template-columns: repeat(4, minmax(200px, 270px));
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .countryCardWrapper {
+    grid-template-columns: repeat(3, 270px);
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .countryCardWrapper {
+    grid-template-columns: repeat(2, 270px);
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .filterAreaWrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .searchBar {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .countryCardWrapper {
+    grid-template-columns: repeat(1, 270px);
+    justify-content: space-evenly;
+  }
 }
