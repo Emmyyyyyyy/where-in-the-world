@@ -1,5 +1,7 @@
 import styles from '../styles/Detail.module.css';
 import { useRouter } from 'next/router';
+// import { CountryData, fetchData } from '../api';
+import { GetServerSideProps } from 'next';
 
 type Props = {
   darkMode: boolean;
@@ -11,6 +13,7 @@ export default function Detail({ darkMode }: Props) {
   const handleBackButtonClick = () => {
     router.back();
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.buttonArea}>
@@ -23,7 +26,7 @@ export default function Detail({ darkMode }: Props) {
       <div className={styles.infoWrapper}>
         <div className={styles.flagWrapper}></div>
         <div className={styles.info}>
-          <p className={styles.country}>Belgium</p>
+          <p className={styles.country}></p>
           <div className={styles.devideInfo}>
             <div className={styles.leftContainer}>
               <div>

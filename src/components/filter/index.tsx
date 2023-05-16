@@ -1,5 +1,5 @@
 import styles from '../../styles/Filter.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,6 +10,7 @@ type Props = {
 export default function Filter({ darkMode }: Props) {
   const [open, setOpen] = useState<boolean>(false);
   const [selectedRegion, setSelectedRegion] = useState<string>('');
+  const [data, setData] = useState();
   const handleFilterButtonClick = () => {
     setOpen(!open);
     // if (open) console.log('open');
@@ -19,6 +20,18 @@ export default function Filter({ darkMode }: Props) {
     setSelectedRegion(region);
     setOpen(false);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetch(`https://restcountries.com/v3.1/all`);
+      const json = await data.json();
+      setData(json);
+    };
+    fetchData().catch(console.error);
+  }, []);
+
+  console.log(data);
+
   return (
     <div className={darkMode ? `${styles.wrapper} ${styles.dark}` : styles.wrapper}>
       <div className={styles.container}>
@@ -58,31 +71,39 @@ export default function Filter({ darkMode }: Props) {
           </div>
         </div>
         <div className={styles.countryCardWrapper}>
-          <Link href="/detail">
-            <div
-              className={
-                darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard
-              }>
-              <Image src="" alt="" className={styles.coverImage} />
-              <div className={styles.textArea}>
-                <p className={styles.country}>Germany</p>
-                <div className={styles.infoWrapper}>
-                  <div className={styles.info}>
-                    <p className={styles.type}>Population:</p>
-                    <p className={styles.value}>81,770,900</p>
-                  </div>
-                  <div className={styles.info}>
-                    <p className={styles.type}>Rigion:</p>
-                    <p className={styles.value}>Europe</p>
-                  </div>
-                  <div className={styles.info}>
-                    <p className={styles.type}>Capital:</p>
-                    <p className={styles.value}>Berlin</p>
+          {data?.map((item, index) => (
+            <Link href="/detail" key={index}>
+              <div
+                className={
+                  darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard
+                }>
+                <Image
+                  src={item?.flags?.svg}
+                  alt={item?.flags?.alt}
+                  className={styles.coverImage}
+                  width={1}
+                  height={1}
+                />
+                <div className={styles.textArea}>
+                  <p className={styles.country}>{item?.name?.common}</p>
+                  <div className={styles.infoWrapper}>
+                    <div className={styles.info}>
+                      <p className={styles.type}>Population:</p>
+                      <p className={styles.value}>{item?.population.toLocaleString('en-US')}</p>
+                    </div>
+                    <div className={styles.info}>
+                      <p className={styles.type}>Rigion:</p>
+                      <p className={styles.value}>{item?.region}</p>
+                    </div>
+                    <div className={styles.info}>
+                      <p className={styles.type}>Capital:</p>
+                      <p className={styles.value}>{item?.capital}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          ))}
 
           {/* <div
             className={darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard}>
