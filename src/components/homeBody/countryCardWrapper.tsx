@@ -12,7 +12,13 @@ export default function CountryCardWrapper({ darkMode, data }: Props) {
   return (
     <div className={styles.countryCardWrapper}>
       {data?.map((item, index) => (
-        <Link href="/detail" key={index}>
+        <Link
+          href={{
+            pathname: '/detail',
+            query: { item: JSON.stringify(item) }
+          }}
+          as={'/detail?name=' + item?.name?.common}
+          key={index}>
           <div
             className={darkMode ? `${styles.countryCard} ${styles.darkProps}` : styles.countryCard}>
             <Image

@@ -29,7 +29,6 @@
 .flagWrapper {
   width: 500px;
   height: 100%;
-  border: 1px solid red;
 }
 .country {
   font-weight: 800;
@@ -85,6 +84,11 @@
   background: hsl(209, 23%, 22%);
   color: hsl(0, 0%, 100%);
 }
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 @media only screen and (max-width: 1300px) {
   .container {
@@ -122,5 +126,14 @@
   .borderCountry {
     flex-direction: column;
     gap: 20px;
+  }
+  .flagWrapper {
+    width: auto;
+    height: auto;
+  }
+  .coverImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 }
