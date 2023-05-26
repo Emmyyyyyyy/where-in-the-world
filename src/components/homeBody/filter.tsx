@@ -9,6 +9,7 @@ type Props = {
   setSelectedRegion: React.Dispatch<React.SetStateAction<string>>;
   handleFilterButtonClick: () => void;
   handleRegionClick: (region: string) => void;
+  handleChange: (event: any) => void;
 };
 
 export default function Filter({
@@ -18,7 +19,8 @@ export default function Filter({
   setOpen,
   setSelectedRegion,
   handleFilterButtonClick,
-  handleRegionClick
+  handleRegionClick,
+  handleChange
 }: Props) {
 
   return (
@@ -26,6 +28,7 @@ export default function Filter({
       <input
         className={darkMode ? `${styles.searchBar} ${styles.darkProps}` : styles.searchBar}
         placeholder="Search for a country..."
+        onChange={(e) => handleChange(e)}
       />
       <div className={styles.buttonWrapper}>
         <button

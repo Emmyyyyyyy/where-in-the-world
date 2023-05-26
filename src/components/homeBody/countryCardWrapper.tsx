@@ -5,13 +5,14 @@ import { CountryData } from '../../api';
 
 type Props = {
   darkMode: boolean;
+  filterdCountry?: CountryData[];
   data?: CountryData[];
 };
 
-export default function CountryCardWrapper({ darkMode, data }: Props) {
+export default function CountryCardWrapper({ darkMode, filterdCountry, data }: Props) {
   return (
     <div className={styles.countryCardWrapper}>
-      {data?.map((item, index) => (
+      {filterdCountry?.map((item, index) => (
         <Link
           href={{
             pathname: '/detail',
